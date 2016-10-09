@@ -1,0 +1,88 @@
+﻿<html>
+<head>
+    <title>Angular 2 QuickStart</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- 1. Load libraries -->
+    <!-- Polyfill(s) for older browsers -->
+
+    <style type="text/css">
+        .container {
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            margin: -75px 0 0 -250px;
+            padding: 10% 100px;
+            border: 1px dashed #666;
+        }
+
+        [class*="box-"] {
+            width: 150px;
+            height: 150px;
+        }
+
+        .box-1 {
+            float: left;
+            background: #f00;
+        }
+
+        .box-2 {
+            float: right;
+            background: #00f;
+        }
+
+        .box-1:hover {
+            background: #00f;
+        }
+
+        .box-2:hover {
+            background: #f00;
+        }
+
+        [class*="anim-"] {
+            transition: all 0.25s ease-out;
+        }
+
+            [class*="anim-"]:hover {
+                border-radius: 50%;
+                -webkit-transition: all 0.25s ease-out;
+                -moz-transition: all 0.25s ease-out;
+                -o-transition: all 0.25s ease-out;
+                transition: all 0.25s ease-out;
+                z-index: 10;
+            }
+
+        .anim-1:hover {
+            -webkit-transform: rotate(45deg) scale(1.5);
+        }
+
+        .anim-2:hover {
+            -webkit-transform: rotate(-45deg) scale(1.5);
+        }
+    </style>
+
+    <script src="libs/core-js/client/shim.min.js"></script>
+    <script src="libs/zone.js/dist/zone.js"></script>
+    <script src="libs/reflect-metadata/Reflect.js"></script>
+    <script src="libs/systemjs/dist/system.src.js"></script>
+
+    <!-- 2. Configure SystemJS -->
+    <script src="systemjs.config.js"></script>
+    <script>
+        System.import('appScripts/boot').catch(function (err)
+        {
+            console.error(err);
+        });
+    </script>
+</head>
+<!-- 3. Display the application -->
+<body>
+    <my-app>Loading...</my-app>
+
+    <div class="container">
+        <div class="box-1 anim-1"></div>
+        <div class="box-2 anim-2"></div>
+    </div>
+</body>
+</html>
